@@ -24,10 +24,12 @@ const images = [
     alt: "Lighthouse Coast Sea",
   },
 ];
+
 function createGallary(arr) {
   const arrayOfImg = [];
   arr.forEach((picture) => {
     const image = document.createElement("img");
+    image.classList.toggle("image");
     image.src = picture.url;
     image.alt = picture.alt;
     arrayOfImg.push(image);
@@ -38,9 +40,29 @@ function createGallary(arr) {
 console.log(createGallary(images));
 
 const listOfImages = document.querySelector("ul");
-createGallary(images).forEach((one) => {
-  const li = document.createElement("li");
-  li.appendChild(one);
-  listOfImages.appendChild(li);
+const topList = document.createElement("li");
+topList.classList.toggle("gallery-item");
+const bottomList = document.createElement("li");
+bottomList.classList.toggle("gallery-item");
+listOfImages.appendChild(topList);
+listOfImages.appendChild(bottomList);
+const firstUl = document.createElement("ul");
+firstUl.classList.toggle("gallery-item-list");
+const secondUl = document.createElement("ul");
+secondUl.classList.toggle("gallery-item-list");
+topList.append(firstUl);
+bottomList.append(secondUl);
+createGallary(images).forEach((one, index) => {
+  if (index <= 2) {
+    const li = document.createElement("li");
+    li.classList.toggle("gal-item-list-item");
+    li.appendChild(one);
+    firstUl.appendChild(li);
+  } else if (index > 2) {
+    const li = document.createElement("li");
+    li.classList.toggle("gal-item-list-item");
+    li.appendChild(one);
+    secondUl.appendChild(li);
+  }
 });
 console.log(listOfImages);
