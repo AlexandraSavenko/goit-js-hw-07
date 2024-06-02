@@ -26,8 +26,8 @@ const images = [
 ];
 
 function createGallary(arr) {
-  const arrayOfImg = [];
-  arr.forEach((picture) => {
+  const arrayOfImg = arr.map((picture) => {
+    `<li><img src="${picture.src}" alt="${image.alt}"></li>`;
     const image = document.createElement("img");
     image.classList.toggle("image");
     image.src = picture.url;
