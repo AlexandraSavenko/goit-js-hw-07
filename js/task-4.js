@@ -14,4 +14,5 @@ function handleGetInput(event) {
   }
   //   email.value = "";
   //   password.value = "";
+  form.reset();
 }
