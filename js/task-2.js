@@ -27,8 +27,8 @@ const images = [
 const listOfImages = document.querySelector("ul");
 function createGallary(arr) {
   const arrayOfImg = arr
-    .map((picture) => {
-      return `<li class="gallery-item"><img class="gallery-item-img" src="${picture.url} alt ="${picture.alt}" /></li>`;
+    .map(({ url, alt }) => {
+      return `<li class="gallery-item"><img class="gallery-item-img" src="${url}" alt ="${alt}" width="300"/></li>`;
     })
     .join("");
   console.log(arrayOfImg);
