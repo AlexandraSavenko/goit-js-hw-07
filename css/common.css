@@ -182,7 +182,7 @@ body {
   border-radius: 8px;
   padding: 32px;
   width: 490px;
-  height: 134px;
+  min-height: 134px;
   background-color: #f6f6fe;
   display: flex;
   flex-wrap: wrap;
