@@ -15,6 +15,7 @@ function handleInput(event) {
 createButton.addEventListener("click", handlerCreate);
 function handlerCreate() {
   if (inputResult >= 1 && inputResult <= 100) {
+    boxes.innerHTML = "";
     createBoxes(inputResult); //?but I can call this function with the right argument from here
     const items = Array.from(document.querySelectorAll(".box"));
     //==My function creates number that will be used for width and height properties of my box
