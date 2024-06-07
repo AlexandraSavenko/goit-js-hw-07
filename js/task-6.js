@@ -33,7 +33,7 @@ function handlerCreate() {
     //   item.style.width = `${biggerSize(items.length)}px`;
     //   item.style.height = `${biggerSize(items.length)}px`;
     // });
-    let size = 20;
+    let size = 30;
     function biggerSize(index) {
       return size + index * 10;
     }
