@@ -3,6 +3,7 @@ const input = document.querySelector("input");
 const createButton = document.querySelector("button[data-create]");
 const destroyButton = document.querySelector("button[data-destroy]");
 const boxes = document.querySelector("#boxes");
+const newBox = document.querySelector(".box");
 
 input.addEventListener("input", handleInput);
 let inputResult = 0;
@@ -10,16 +11,26 @@ function handleInput(event) {
   inputResult = Number(event.currentTarget.value);
 }
 
-//==============================================
+//======================================I call my function which creates boxes========
 createButton.addEventListener("click", handlerCreate);
 function handlerCreate() {
   if (inputResult >= 1 && inputResult <= 100) {
     createBoxes(inputResult); //?but I can call this function with the right argument from here
+    const items = Array.from(document.querySelectorAll(".box")).length;
+    console.log(document.querySelectorAll(".box"));
+    //==My function creates number that will be used for width and height properties of my box
+    let size = 20;
+    function biggerSize(items) {
+      for (let i = 1; i <= items; i += 1) console.log((size += 10));
+    }
+    biggerSize(items);
+    // items.style.backgroundColor = "red";
   }
+
   inputResult = 0;
   input.value = "";
 }
-//============================================
+//=========================My function to create HTML boxes===================
 
 function createBoxes(amount) {
   let boxHTML = "";
