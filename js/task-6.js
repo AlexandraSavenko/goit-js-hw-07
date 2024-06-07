@@ -25,7 +25,7 @@ function handlerCreate() {
       }
       console.log(size);
       return size;
-    } //my function ends here
+    } //my function that generates size ends here
     const myBoxSize = biggerSize(items.length);
     console.log(`this is the size of my box: ${myBoxSize}`);
     items.forEach((item) => {
