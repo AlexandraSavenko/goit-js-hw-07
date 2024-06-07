@@ -133,12 +133,58 @@ body {
   color: #fff;
 }
 /* task-6 */
-.controls {
+#controls {
   display: flex;
   gap: 16px;
+  background-color: #f6f6fe;
+  border-radius: 8px;
+  padding: 32px;
+  width: 486px;
+  height: 104px;
+  margin-bottom: 16px;
 }
-.boxes {
+#controls input[type="number"] {
+  background-color: transparent;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding: 8px 72px;
+  width: 150px;
+  height: 40px;
+}
+#controls button[data-create] {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+#controls button[data-destroy] {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  background: #ff4e4e;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+#boxes {
+  border-radius: 8px;
+  padding: 32px;
+  width: 490px;
+  height: 134px;
+  background-color: #f6f6fe;
   display: flex;
+  align-items: center;
   gap: 44px;
 }
 .box {
