@@ -16,15 +16,25 @@ createButton.addEventListener("click", handlerCreate);
 function handlerCreate() {
   if (inputResult >= 1 && inputResult <= 100) {
     createBoxes(inputResult); //?but I can call this function with the right argument from here
-    const items = Array.from(document.querySelectorAll(".box")).length;
-    console.log(document.querySelectorAll(".box"));
+    const items = Array.from(document.querySelectorAll(".box"));
     //==My function creates number that will be used for width and height properties of my box
     let size = 20;
     function biggerSize(items) {
-      for (let i = 1; i <= items; i += 1) console.log((size += 10));
-    }
-    biggerSize(items);
-    // items.style.backgroundColor = "red";
+      for (let i = 1; i <= items; i += 1) {
+        size += 10;
+      }
+      console.log(size);
+      return size;
+    } //my function ends here
+    const myBoxSize = biggerSize(items.length);
+    console.log(`this is the size of my box: ${myBoxSize}`);
+    items.forEach((item) => {
+      item.style.backgroundColor = getRandomHexColor();
+      item.style.width = `${biggerSize(items.length)}px`;
+      item.style.height = `${biggerSize(items.length)}px`;
+      // item.style.width = `${myBoxSize}px`;
+      // item.style.height = `${myBoxSize}px`;
+    });
   }
 
   inputResult = 0;
