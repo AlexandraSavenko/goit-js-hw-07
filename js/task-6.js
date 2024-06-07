@@ -18,22 +18,30 @@ function handlerCreate() {
     createBoxes(inputResult); //?but I can call this function with the right argument from here
     const items = Array.from(document.querySelectorAll(".box"));
     //==My function creates number that will be used for width and height properties of my box
+    // let size = 20;
+    // function biggerSize(items) {
+    //   for (let i = 1; i <= items; i += 1) {
+    //     size += 10;
+    //   }
+    //   console.log(size);
+    //   return size;
+    // } //my function that generates size ends here
+    // console.log(`this is the size of my box: ${myBoxSize}`);
+    // items.forEach((item) => {
+    //   item.style.backgroundColor = getRandomHexColor();
+    //   item.style.width = `${biggerSize(items.length)}px`;
+    //   item.style.height = `${biggerSize(items.length)}px`;
+    // });
     let size = 20;
-    function biggerSize(items) {
-      for (let i = 1; i <= items; i += 1) {
-        size += 10;
-      }
-      console.log(size);
-      return size;
-    } //my function that generates size ends here
-    const myBoxSize = biggerSize(items.length);
-    console.log(`this is the size of my box: ${myBoxSize}`);
-    items.forEach((item) => {
+    function biggerSize(index) {
+      return size + index * 10;
+    }
+
+    items.forEach((item, index) => {
       item.style.backgroundColor = getRandomHexColor();
-      item.style.width = `${biggerSize(items.length)}px`;
-      item.style.height = `${biggerSize(items.length)}px`;
-      // item.style.width = `${myBoxSize}px`;
-      // item.style.height = `${myBoxSize}px`;
+      const newSize = biggerSize(index);
+      item.style.width = `${newSize}px`;
+      item.style.height = `${newSize}px`;
     });
   }
 
